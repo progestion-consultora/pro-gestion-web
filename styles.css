@@ -229,7 +229,7 @@ body::before{
 
   /* menú más compacto */
   .navlinks{
-    gap: 7px;
+    gap: 8px;
   }
 
   .navlinks a{
@@ -242,4 +242,5 @@ body::before{
   .brand small{
     font-size: 12px;
   }
+
 }
