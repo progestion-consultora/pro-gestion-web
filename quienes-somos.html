@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiénes Somos | Pro Gestión</title>
+  <meta name="description" content="Frase institucional, misión y valores de Pro Gestión." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+	<a class="brand" href="index.html">
+  	<img src="img/logo-pro-gestion.png" alt="Pro Gestión" class="logo">
+          <span>
+            Pro Gestión
+            <small>Gestión empresarial • Eficiencia operativa</small>
+          </span>
+        </a>
+        <div class="navlinks">
+          <a href="index.html">Inicio</a>
+          <a class="active" href="quienes-somos.html">Quiénes Somos</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <span class="badge">Identidad institucional</span>
+        <h1 style="margin-top:10px">Quiénes Somos</h1>
+        <p class="lead">
+          Pro Gestión es una consultora orientada a mejorar la eficiencia operativa de las empresas, a través de servicios de gestión específicos, prácticos y enfocados en generar impacto concreto en la toma de decisiones.
+        </p>
+      </div>
+
+      <div class="section sm"></div>
+
+      <div class="grid two">
+        <div class="card">
+          <h2 style="margin:0 0 10px">Misión</h2>
+          <p>
+            Acompañar a las empresas en la mejora de sus procesos de gestión, brindando análisis claros, soluciones prácticas y herramientas aplicables, que les permitan optimizar costos, ordenar su operación y tomar mejores decisiones.
+          </p>
+        </div>
+        <div class="card soft">
+          <h2 style="margin:0 0 10px">Cómo trabajamos</h2>
+          <p>
+            Abordamos cada necesidad de manera puntual, con alcances definidos y objetivos claros. Priorizamos intervenciones progresivas para que la empresa evalúe resultados antes de avanzar hacia etapas de mayor alcance.
+          </p>
+        </div>
+      </div>
+
+      <div class="section sm"></div>
+
+      <div class="card">
+        <h2 style="margin:0 0 12px">Valores</h2>
+        <div class="grid two">
+          <div class="card soft">
+            <h3>Enfoque práctico</h3>
+            <p>Trabajamos sobre la realidad concreta de cada empresa, priorizando soluciones aplicables y resultados medibles por sobre modelos teóricos.</p>
+          </div>
+          <div class="card soft">
+            <h3>Claridad y transparencia</h3>
+            <p>Brindamos diagnósticos honestos y fundamentados, para que cada cliente decida con información clara.</p>
+          </div>
+          <div class="card soft">
+            <h3>Intervenciones progresivas</h3>
+            <p>Comenzamos por áreas clave, con alcances definidos, y avanzamos de manera gradual según necesidades reales.</p>
+          </div>
+          <div class="card soft">
+            <h3>Compromiso profesional</h3>
+            <p>Actuamos con responsabilidad, confidencialidad y dedicación, cuidando el tiempo y los recursos del cliente.</p>
+          </div>
+          <div class="card soft" style="grid-column: 1 / -1">
+            <h3>Orientación a la eficiencia</h3>
+            <p>Buscamos optimizar procesos, costos y recursos, aportando valor desde la gestión y la mejora continua de la operación.</p>
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:16px">
+          <a class="btn primary" href="contacto.html">Coordinemos una llamada</a>
+          <a class="btn secondary" href="servicios.html">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <strong>Pro Gestión</strong><br/>
+          <small>Gestión empresarial • Eficiencia operativa</small>
+        </div>
+        <div>
+          <small>© <span id="year"></span> Pro Gestión.</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
