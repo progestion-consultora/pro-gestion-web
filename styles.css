@@ -223,7 +223,7 @@ body::before{
 
   /* logo más chico en celular */
   .logo{
-    height: 38px;     /* probá 32–38 según tu gusto */
+    height: 42px;     /* probá 32–38 según tu gusto */
     max-width: 160px;
   }
 
@@ -244,5 +244,6 @@ body::before{
   }
 
 }
+
 
 
