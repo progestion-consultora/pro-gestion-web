@@ -179,7 +179,7 @@ textarea{min-height:120px; resize: vertical}
 .note{font-size:13px;color:var(--muted)}
 
 .logo{
-  height: 56px;
+  height: 64px;
   width: auto;
   max-width: 240px;
   object-fit: contain;
@@ -244,6 +244,7 @@ body::before{
   }
 
 }
+
 
 
 
