@@ -265,9 +265,6 @@ body::before{
 }
 
 /* Quienes Somos – separación entre título y texto */
-.card h1 {
-  margin-bottom: 24px;
-}
 
 .card .lead {
   margin-top: 0;
@@ -278,3 +275,10 @@ body::before{
   margin-right: auto;
 }
 
+.card h1.page-title{
+  margin-bottom: 24px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
