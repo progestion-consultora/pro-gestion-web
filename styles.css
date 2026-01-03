@@ -255,8 +255,14 @@ body::before{
   max-width: 620px;
 }
 
+/* Quienes Somos - ajustes de títulos */
+.page-title {
+  margin-top: 10px;
+}
 
-
+.card-title {
+  margin: 0 0 10px;
+}
 
 
 
