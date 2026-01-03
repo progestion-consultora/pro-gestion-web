@@ -270,13 +270,14 @@ body::before{
   margin-top: 0;
   margin-bottom: 16px;
   line-height: 1.7;
-  max-width: 760px;
+  max-width: 900px;
 }
 
 .card h1.page-title{
   margin-bottom: 24px;
-  max-width: 760px;
+  max-width: 900px;
 }
+
 
 
 
