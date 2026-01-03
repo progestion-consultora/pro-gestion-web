@@ -274,3 +274,7 @@ body::before{
   margin-bottom: 16px;
   line-height: 1.7;
 }
+
+.card .lead {
+  max-width: 760px;
+}
