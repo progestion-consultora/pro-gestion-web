@@ -264,5 +264,13 @@ body::before{
   margin: 0 0 10px;
 }
 
+/* Quienes Somos – separación entre título y texto */
+.card h1 {
+  margin-bottom: 24px;
+}
 
-
+.card .lead {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
