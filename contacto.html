@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto | Pro Gestión</title>
-  <meta name="description" content="Contacto Pro Gestión. Coordinemos una conversación." />
+  <link rel="icon" type="image/png" href="/favicon.png?v=1">
+
+  <title>Contacto | Pro Gestión – Consultoría en Gestión Empresarial en Rosario</title>
+  <meta name="description" content="Contactá a Pro Gestión para mejorar procesos, compras y eficiencia operativa. Atención en Rosario y la región. Consulta inicial sin compromiso." />
+
   <link rel="stylesheet" href="styles.css?v=3" />
-	<link rel="icon" type="image/png" href="/favicon.png?v=1">
 </head>
 <body>
   <header class="header">
     <div class="container">
       <nav class="navbar">
-	<a class="brand" href="index.html">
-  	<img src="img/logo-pro-gestion.png" alt="Pro Gestión" class="logo">
+        <a class="brand" href="index.html">
+          <img src="img/logo-pro-gestion.png" alt="Pro Gestión" class="logo">
           <span>
             Pro Gestión
             <small>Eficiencia empresarial</small>
@@ -33,25 +35,26 @@
     <div class="container">
       <div class="card">
         <span class="badge">Contacto</span>
-        <h1 style="margin-top:10px">Conversemos</h1>
+        <h1 class="page-title">Hablemos de tu situación</h1>
         <p class="lead">
-          Contanos brevemente tu necesidad y coordinamos una llamada. El objetivo es entender tu caso y ver si podemos aportar valor de manera concreta.
+          Contanos brevemente qué necesitás y coordinamos una llamada.
+          El objetivo es entender tu caso y definir por dónde conviene empezar, con un enfoque práctico y concreto.
+        </p>
+        <p class="note contact-note">
+          Atención en Rosario y la región (presencial o remoto según el proyecto). Respondemos dentro de las próximas 24 hs hábiles.
         </p>
 
-        <div class="grid two" style="margin-top:14px">
+        <div class="grid two contact-grid">
           <div class="card soft">
             <h3>Canales directos</h3>
             <p>
               <strong>WhatsApp:</strong>
-              <!-- Reemplazá el número por el tuyo (formato internacional sin +, ej: 549341xxxxxxx) -->
               <a id="waLink" href="#" rel="noopener">+54 (9) 341 650-0759</a>
             </p>
             <p>
               <strong>Email:</strong>
-              <!-- Reemplazá por tu mail -->
               <a href="mailto:consultorias.pro.gestion@gmail.com">consultorias.pro.gestion@gmail.com</a>
             </p>
-            <p class="note">*Respondemos dentro de las próximas 24 hs hábiles.</p>
           </div>
 
           <div class="card">
@@ -67,18 +70,19 @@
               </div>
               <div>
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Ej: Queremos analizar compras y proveedores. ¿Podemos coordinar una llamada?"></textarea>
+                <textarea id="mensaje" name="mensaje" placeholder="Ej: Queremos ordenar compras y proveedores. ¿Podemos coordinar una llamada breve?"></textarea>
               </div>
               <div class="btnrow">
-                <button class="btn primary" type="submit">Generar mensaje</button>
+                <button class="btn primary" type="submit">Abrir WhatsApp con mensaje</button>
                 <button class="btn ghost" type="button" onclick="resetForm()">Limpiar</button>
               </div>
-              <p class="note" id="helper" style="margin:6px 0 0">
+              <p class="note" id="helper">
                 Esto arma un texto y abre WhatsApp con el mensaje listo para enviar.
               </p>
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </main>
@@ -101,7 +105,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // === CONFIGURACIÓN ===
-    // Reemplazá por tu número en formato: 549 + código de área + número (sin + ni espacios)
+    // Número en formato: 549 + código de área + número (sin + ni espacios)
     const WHATSAPP_NUMBER = "5493416500759";
 
     function baseWaUrl(text){
@@ -133,7 +137,4 @@
     }
   </script>
 </body>
-
 </html>
-
-
