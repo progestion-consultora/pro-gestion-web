@@ -278,6 +278,15 @@ body::before{
   max-width: 900px;
 }
 
+/* Servicios – ajustes finos */
+.service-lead{ margin: 0 0 12px; }
+.service-cta{ margin-top: 14px; }
+.service-note{ margin-top: 10px; }
 
+.service-card{ display:block; text-decoration:none !important; }
+.service-card:hover{ text-decoration:none !important; filter: brightness(.99); }
 
-
+.service-card.is-disabled{
+  opacity: .85;
+  cursor: default;
+}
