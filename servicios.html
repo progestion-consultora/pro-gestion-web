@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" type="image/png" href="/favicon.png?v=1">
-  <title>Servicios | Pro Gestión</title>
-  <meta name="description" content="Servicios de Pro Gestión. Enfoque principal: Gestión de Compras. Otras áreas: Procesos, SGI, SyHMA, Software." />
+  <link rel="icon" type="image/png" href="/favicon.png?v=1">
+
+  <title>Servicios | Pro Gestión – Consultoría en Gestión Empresarial</title>
+  <meta name="description" content="Servicios de consultoría en gestión empresarial para mejorar compras, procesos y eficiencia operativa. Atención en Rosario y la región." />
+
   <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <header class="header">
     <div class="container">
       <nav class="navbar">
-	<a class="brand" href="index.html">
-  	<img src="img/logo-pro-gestion.png" alt="Pro Gestión" class="logo">
+        <a class="brand" href="index.html">
+          <img src="img/logo-pro-gestion.png" alt="Pro Gestión" class="logo">
           <span>
             Pro Gestión
             <small>Eficiencia empresarial</small>
@@ -31,21 +33,26 @@
 
   <main class="section">
     <div class="container">
+
+      <!-- Intro -->
       <div class="card">
         <span class="badge">Servicios</span>
-        <h1 style="margin-top:10px">Qué hacemos</h1>
+        <h1 class="page-title">Qué hacemos</h1>
         <p class="lead">
-          Trabajamos con servicios específicos y progresivos. Empezamos por áreas clave, con alcances definidos y entregables claros.
+          Brindamos servicios específicos y progresivos para ordenar la gestión, mejorar procesos y tomar decisiones con información clara.
+          Empezamos por áreas clave, con alcances definidos y entregables concretos.
         </p>
       </div>
 
       <div class="section sm"></div>
 
+      <!-- Servicio principal -->
       <section id="compras" class="card">
-        <h2 style="margin:0 0 8px">Gestión de Compras</h2>
-        <p class="lead" style="margin:0 0 12px">
+        <h2 class="card-title">Gestión de Compras</h2>
+        <p class="lead service-lead">
           Analizamos el proceso de compras para mejorar costos, proveedores y criterios de decisión, a través de un diagnóstico claro y acotado.
         </p>
+
         <div class="grid two">
           <div class="card soft">
             <h3>Alcance típico</h3>
@@ -60,48 +67,63 @@
             <h3>Entregables</h3>
             <ul>
               <li>Informe breve con hallazgos y oportunidades.</li>
-              <li>Acciones recomendadas.</li>
-              <li>Herramientas simples (registro / comparativo / controles básicos).</li>
-              <li>Opciones de implementación.</li>
+              <li>Acciones recomendadas y próximos pasos.</li>
+              <li>Herramientas simples (registro, comparativo, controles básicos).</li>
+              <li>Opciones de implementación por etapas.</li>
             </ul>
           </div>
         </div>
-        <div class="btnrow" style="margin-top:14px">
-          <a class="btn primary" href="contacto.html">Envia tu consulta</a>
+
+        <div class="btnrow service-cta">
+          <a class="btn primary" href="contacto.html">Enviá tu consulta</a>
           <a class="btn ghost" href="index.html#compras">Volver al Inicio</a>
         </div>
-        <p class="note" style="margin-top:10px">
-          *El objetivo es brindar claridad y fundamentos para decidir. La implementación puede ser acompañada por etapas.
+
+        <p class="note service-note">
+          *El objetivo es brindar claridad y fundamentos para decidir. La implementación puede ser llevada a cabo por etapas.
         </p>
       </section>
 
       <div class="section sm"></div>
 
+      <!-- Otras áreas -->
       <section class="card">
-        <h2 style="margin:0 0 10px">Otras áreas</h2>
-        <p class="lead" style="margin:0 0 12px">
-          Estas áreas se abordan según prioridad y madurez de gestión.
+        <h2 class="card-title">Otras áreas</h2>
+        <p class="lead service-lead">
+          Estas áreas se abordan según prioridad y madurez de gestión. Si querés, podemos definir por dónde conviene empezar.
         </p>
 
         <div class="grid two">
-          <div class="card soft">
+          <a class="card soft service-card" href="mejora-de-procesos.html">
             <h3>Gestión de Procesos y Mejora Continua</h3>
-          </div>
-          <div class="card soft">
+            <p class="note">Análisis y orden de procesos, roles y tiempos. Mejora del flujo de trabajo y eficiencia operativa.</p>
+          </a>
+
+          <div class="card soft service-card is-disabled">
             <h3>Sistemas de Gestión Integrados (SGI)</h3>
+            <p class="note">Implementación y orden documental según necesidad. Auditorías Internas en Trinorma ISO. </p>
           </div>
-          <div class="card soft">
+
+          <div class="card soft service-card is-disabled">
             <h3>Seguridad, Higiene y Medio Ambiente</h3>
+            <p class="note">Soporte y coordinación con profesionales según el alcance del caso.</p>
           </div>
-          <div class="card soft">
+
+          <div class="card soft service-card is-disabled" style="grid-column: 1 / -1">
             <h3>Soluciones de Software y Sistemas</h3>
+            <p class="note">Herramientas simples para registrar, controlar y mejorar la gestión.</p>
           </div>
         </div>
 
-        <div class="btnrow" style="margin-top:14px">
+        <div class="btnrow service-cta">
           <a class="btn secondary" href="contacto.html">Hablemos de tu caso</a>
         </div>
+
+        <p class="note service-note">
+          Atención en Rosario y la región (presencial o remoto según el proyecto).
+        </p>
       </section>
+
     </div>
   </main>
 
@@ -123,7 +145,4 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-
 </html>
-
-
