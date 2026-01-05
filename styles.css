@@ -283,8 +283,20 @@ body::before{
 .service-cta{ margin-top: 14px; }
 .service-note{ margin-top: 10px; }
 
-.service-card{ display:block; text-decoration:none !important; }
-.service-card:hover{ text-decoration:none !important; filter: brightness(.99); }
+.service-card{
+  display: block;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.service-card:hover{
+  text-decoration: none !important;
+  filter: brightness(.99);
+}
+
+.service-card:hover h3{
+  text-decoration: underline;
+}
 
 .service-card.is-disabled{
   opacity: .85;
@@ -294,3 +306,4 @@ body::before{
 .service-card-cta{
   margin-top: 10px;
 }
+
