@@ -307,3 +307,9 @@ body::before{
   margin-top: 10px;
 }
 
+/* Contacto – ajustes finos */
+.contact-grid{ margin-top: 14px; }
+.contact-note{ margin-top: 10px; }
+
+#helper{ margin: 6px 0 0; }
+
