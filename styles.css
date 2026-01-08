@@ -341,11 +341,9 @@ body::before{
 }
 
 /* ícono */
-.whatsapp-float svg{
-  width: 34px !important;
-  height: 34px !important;
-  fill: currentColor !important;
-  display: block !important;
+.whatsapp-float{
+  font-size: 32px !important;
+  line-height: 1 !important;
 }
 
 /* hover */
@@ -363,9 +361,11 @@ body::before{
     bottom: 16px !important;
   }
 
-  .whatsapp-float svg{
-    width: 30px !important;
-    height: 30px !important;
+@media (max-width: 768px){
+  .whatsapp-float{
+    font-size: 30px !important;
   }
+
 }
+
 
