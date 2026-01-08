@@ -319,11 +319,11 @@ body::before{
 
 .whatsapp-float{
   position: fixed !important;
-  right: 20px !important;
-  bottom: 20px !important;
+  right: 24px !important;
+  bottom: 24px !important;
 
-  width: 56px !important;
-  height: 56px !important;
+  width: 64px !important;
+  height: 64px !important;
 
   background-color: #25D366 !important;
   color: #ffffff !important;
@@ -342,8 +342,8 @@ body::before{
 
 /* ícono */
 .whatsapp-float svg{
-  width: 30px !important;
-  height: 30px !important;
+  width: 34px !important;
+  height: 34px !important;
   fill: currentColor !important;
   display: block !important;
 }
@@ -357,14 +357,15 @@ body::before{
 /* mobile */
 @media (max-width: 768px){
   .whatsapp-float{
-    width: 52px !important;
-    height: 52px !important;
+    width: 58px !important;
+    height: 58px !important;
     right: 16px !important;
     bottom: 16px !important;
   }
 
   .whatsapp-float svg{
-    width: 26px !important;
-    height: 26px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
 }
+
