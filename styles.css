@@ -334,16 +334,13 @@ body::before{
   align-items: center !important;
   justify-content: center !important;
 
+  font-size: 32px !important;
+  line-height: 1 !important;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
   z-index: 99999 !important;
 
   text-decoration: none !important;
-}
-
-/* ícono */
-.whatsapp-float{
-  font-size: 32px !important;
-  line-height: 1 !important;
 }
 
 /* hover */
@@ -359,13 +356,7 @@ body::before{
     height: 58px !important;
     right: 16px !important;
     bottom: 16px !important;
-  }
-
-@media (max-width: 768px){
-  .whatsapp-float{
     font-size: 30px !important;
   }
-
 }
-
 
