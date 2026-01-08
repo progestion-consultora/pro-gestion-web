@@ -6,7 +6,7 @@
   <title>Pro Gestión | Consultoría en Gestión Empresarial</title>
   <link rel="icon" type="image/png" href="/favicon.png?v=1">
   <meta name="description" content="Consultoría en gestión empresarial para PYMES de Rosario y la región. Mejoramos procesos, organización y eficiencia operativa con un enfoque práctico y profesional." />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 
   <!-- Icono WhatsApp PRO (Font Awesome) -->
   <link rel="stylesheet"
@@ -23,16 +23,7 @@
      aria-label="Contactar por WhatsApp">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
-  <script>
-    setInterval(() => {
-      const btn = document.querySelector('.whatsapp-float');
-      if (!btn) return;
-  
-      btn.classList.remove('pulse'); // reset
-      void btn.offsetWidth;          // reflow
-      btn.classList.add('pulse');    // dispara animación
-    }, 10000); // cada 10 segundos
-  </script>
+
   <header class="header">
     <div class="container">
       <nav class="navbar">
@@ -199,6 +190,17 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+    setInterval(() => {
+      const btn = document.querySelector('.whatsapp-float');
+      if (!btn) return;
+  
+      btn.classList.remove('pulse'); // reset
+      void btn.offsetWidth;          // reflow
+      btn.classList.add('pulse');    // dispara animación
+    }, 10000); // cada 10 segundos
+  </script>
 </body>
 </html>
+
 
