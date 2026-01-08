@@ -8,7 +8,7 @@
   <title>Contacto | Pro Gestión – Consultoría en Gestión Empresarial en Rosario</title>
   <meta name="description" content="Contactá a Pro Gestión para mejorar procesos, compras y eficiencia operativa. Atención en Rosario y la región. Consulta inicial sin compromiso." />
 
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 
   <!-- Icono WhatsApp PRO (Font Awesome) -->
   <link rel="stylesheet"
@@ -152,6 +152,16 @@
       document.getElementById("mensaje").value = "";
     }
   </script>
-
+  <script>
+    setInterval(() => {
+      const btn = document.querySelector('.whatsapp-float');
+      if (!btn) return;
+  
+      btn.classList.remove('pulse'); // reset
+      void btn.offsetWidth;          // reflow
+      btn.classList.add('pulse');    // dispara animación
+    }, 10000); // cada 10 segundos
+  </script>
 </body>
 </html>
+
