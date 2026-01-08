@@ -23,7 +23,16 @@
      aria-label="Contactar por WhatsApp">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
-
+  <script>
+    setInterval(() => {
+      const btn = document.querySelector('.whatsapp-float');
+      if (!btn) return;
+  
+      btn.classList.remove('pulse'); // reset
+      void btn.offsetWidth;          // reflow
+      btn.classList.add('pulse');    // dispara animación
+    }, 10000); // cada 10 segundos
+  </script>
   <header class="header">
     <div class="container">
       <nav class="navbar">
@@ -192,3 +201,4 @@
   </script>
 </body>
 </html>
+
