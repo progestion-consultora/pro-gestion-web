@@ -362,3 +362,31 @@ body::before{
     font-size: 36px !important;
   }
 }
+/* ===============================
+   Pulse sutil WhatsApp (cada 10s)
+   =============================== */
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+  }
+  40% {
+    transform: scale(1.08);
+    box-shadow: 0 14px 30px rgba(37,211,102,0.45);
+  }
+  60% {
+    transform: scale(1.04);
+    box-shadow: 0 12px 26px rgba(37,211,102,0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+  }
+}
+
+.whatsapp-float{
+  animation: whatsapp-pulse 0.8s ease-in-out infinite;
+  animation-delay: 10s;
+}
+
