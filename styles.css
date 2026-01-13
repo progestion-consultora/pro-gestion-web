@@ -405,3 +405,28 @@ body::before{
 .linkedin-link i{
   font-size: 18px;
 }
+/* ===== Footer: ícono LinkedIn ===== */
+.footer .social{
+  display: flex;
+  align-items: center;
+}
+
+.footer .social a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #0a66c2;          /* Azul LinkedIn */
+  text-decoration: none;
+}
+
+.footer .social a:hover{
+  background: rgba(10, 102, 194, 0.12);
+}
+
+.footer .social i{
+  font-size: 18px;
+}
+
