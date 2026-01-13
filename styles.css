@@ -384,3 +384,20 @@ body::before{
 .whatsapp-float.pulse {
   animation: whatsappPulse 0.8s ease-out;
 }
+
+.linkedin-link a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #0a66c2; /* Azul oficial LinkedIn */
+  text-decoration: none;
+}
+
+.linkedin-link a:hover{
+  text-decoration: underline;
+}
+
+.linkedin-link i{
+  font-size: 18px;
+}
