@@ -388,14 +388,18 @@ body::before{
 .linkedin-link a{
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 500;
-  color: #0a66c2; /* Azul oficial LinkedIn */
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #0a66c2;           /* Azul LinkedIn */
   text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .linkedin-link a:hover{
-  text-decoration: underline;
+  background: rgba(10,102,194,0.1);
+  transform: translateY(-1px);
 }
 
 .linkedin-link i{
