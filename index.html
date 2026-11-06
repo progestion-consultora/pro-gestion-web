@@ -349,7 +349,7 @@ a.contact-channel:hover{background:rgba(255,255,255,.17);transform:translateX(2p
 <span><small>LinkedIn</small><strong>PRO Gestión · Página empresarial</strong></span></a>
 </div><div class="contact-location">Zonas de atención: Villa Constitución · Rosario · San Nicolás · Norte de Buenos Aires</div>
 </div>
-<form accept-charset="UTF-8" action="https://formsubmit.co/consultorias.pro.gestion@gmail.com" aria-label="Formulario de consultas de PRO Gestión" class="contact-form" id="contact-form" method="POST"><input aria-hidden="true" autocomplete="off" class="antispam-field" name="_honey" tabindex="-1" type="text"/><input name="_captcha" type="hidden" value="false"/><input name="_url" type="hidden" value="https://progestion.com.ar/"/><input name="_next" type="hidden" value="https://progestion.com.ar/gracias.html"/><input name="_subject" type="hidden" value="Nueva consulta desde progestion.com.ar"/><h3>Enviá tu consulta</h3><p>Dejanos tus datos y una breve descripción del trabajo.</p>
+<form accept-charset="UTF-8" action="https://formspree.io/f/xqppjrvr" aria-label="Formulario de consultas de PRO Gestión" class="contact-form" id="contact-form" method="POST"><input aria-hidden="true" autocomplete="off" class="antispam-field" name="_gotcha" tabindex="-1" type="text"/><h3>Enviá tu consulta</h3><p>Dejanos tus datos y una breve descripción del trabajo.</p>
 <div class="form-grid"><div class="field"><label for="nombre">Nombre y apellido</label><input autocomplete="name" id="nombre" name="nombre" placeholder="Tu nombre" required=""/></div><div class="field"><label for="empresa">Empresa</label><input autocomplete="organization" id="empresa" name="empresa" placeholder="Nombre de la empresa" required=""/></div></div>
 <div class="field"><label for="email">Correo electrónico</label><input autocomplete="email" id="email" name="email" placeholder="nombre@empresa.com" required="" type="email"/></div>
 <div class="field"><label for="tipo">Servicio de interés</label><select id="tipo" name="tipo" required="required"><option value="">Elegí un servicio</option><option value="Gestión de Compras">Gestión de Compras</option><option value="SGI · Trinormas ISO">SGI · Trinormas ISO</option><option value="Higiene y Seguridad Laboral">Higiene y Seguridad Laboral</option><option value="Tecnología y Automatización">Tecnología y Automatización</option><option value="Procesos Productivos">Procesos Productivos</option><option value="Otra consulta">Otra consulta</option></select></div>
@@ -361,7 +361,7 @@ a.contact-channel:hover{background:rgba(255,255,255,.17);transform:translateX(2p
 <div class="privacy-content">
 <p><strong>Responsable:</strong> PRO Gestión, Villa Constitución, Santa Fe, Argentina. Contacto: <a href="mailto:consultorias.pro.gestion@gmail.com">consultorias.pro.gestion@gmail.com</a>.</p>
 <p>Utilizamos el nombre, la empresa, el correo electrónico y la descripción del requerimiento para responder tu consulta y, cuando corresponda, preparar una propuesta comercial. Si no completás los campos obligatorios, no podremos gestionar tu solicitud.</p>
-<p>El formulario se procesa mediante <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit.co</a>, proveedor externo que transmite los datos al correo de PRO Gestión. No los utilizamos para enviar publicidad sin tu autorización.</p>
+<p>El formulario se procesa mediante <a href="https://formspree.io/legal/privacy-policy/" rel="noopener noreferrer" target="_blank">Formspree</a>, proveedor externo que recibe las consultas y las pone a disposición de PRO Gestión. No utilizamos esos datos para enviar publicidad sin tu autorización.</p>
 <p>Podés solicitar acceso, rectificación o supresión de tus datos escribiendo al correo de contacto.</p>
 </div>
 </details>
@@ -379,8 +379,47 @@ a.contact-channel:hover{background:rgba(255,255,255,.17);transform:translateX(2p
     // El menú de navegación utiliza enlaces y CSS; no necesita JavaScript.
     document.getElementById('year').textContent=new Date().getFullYear();
     document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{const v=link.getAttribute('data-service');const f=document.getElementById('tipo');if([...f.options].some(opt=>opt.value===v))f.value=v;}));
-    // El formulario se envía por POST estándar a FormSubmit.
-    // La activación inicial muestra la explicación del proveedor en lugar de un error genérico.
+    // Formspree: envío AJAX para permanecer en la página; HTML POST como respaldo sin JavaScript.
+    const inquiryForm = document.getElementById('contact-form');
+    const inquiryStatus = document.getElementById('form-status');
+    const inquiryButton = document.getElementById('form-submit-button');
+    inquiryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!inquiryForm.reportValidity()) return;
+      // Evita envíos repetidos, por ejemplo por doble clic.
+      if (inquiryButton.disabled) return;
+      if (inquiryForm.elements['_gotcha'].value.trim()) return;
+
+      const originalLabel = inquiryButton.innerHTML;
+      inquiryButton.disabled = true;
+      inquiryButton.textContent = 'Enviando...';
+      inquiryStatus.className = 'form-status is-visible is-pending';
+      inquiryStatus.textContent = 'Estamos enviando tu consulta.';
+      try {
+        const response = await fetch(inquiryForm.action, {
+          method: 'POST',
+          body: new FormData(inquiryForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) {
+          // No anunciar éxito cuando el servidor rechaza la consulta.
+          let reason = 'No pudimos enviar la consulta. Por favor, intentá nuevamente o escribinos al correo publicado.';
+          if (response.status === 429) reason = 'Hay demasiados intentos de envío. Probá nuevamente más tarde o escribinos por correo.';
+          throw new Error(reason);
+        }
+        inquiryStatus.className = 'form-status is-visible is-success';
+        inquiryStatus.textContent = '¡Gracias! Tu consulta se envió correctamente. Te responderemos a la brevedad.';
+        inquiryForm.reset();
+      } catch (error) {
+        inquiryStatus.className = 'form-status is-visible is-error';
+        inquiryStatus.textContent = error.message && !error.message.startsWith('Failed to fetch')
+          ? error.message
+          : 'No pudimos enviar la consulta. Por favor, intentá nuevamente o escribinos al correo publicado.';
+      } finally {
+        inquiryButton.disabled = false;
+        inquiryButton.innerHTML = originalLabel;
+      }
+    });
 
     const backToTop = document.querySelector('.back-to-top');
     const showBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 650);
