@@ -379,45 +379,8 @@ a.contact-channel:hover{background:rgba(255,255,255,.17);transform:translateX(2p
     // El menú de navegación utiliza enlaces y CSS; no necesita JavaScript.
     document.getElementById('year').textContent=new Date().getFullYear();
     document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{const v=link.getAttribute('data-service');const f=document.getElementById('tipo');if([...f.options].some(opt=>opt.value===v))f.value=v;}));
-    // Envío asincrónico a FormSubmit (GitHub Pages es alojamiento estático).
-    // Si JS no está disponible, el atributo action del <form> envía mediante POST normal.
-    const inquiryForm = document.getElementById('contact-form');
-    const inquiryStatus = document.getElementById('form-status');
-    const inquiryButton = document.getElementById('form-submit-button');
-    const recipientEndpoint = 'https://formsubmit.co/ajax/consultorias.pro.gestion@gmail.com';
-    inquiryForm.addEventListener('submit', async function(event) {
-      event.preventDefault();
-      if (!inquiryForm.reportValidity()) return;
-      if (inquiryForm.elements['_honey'].value.trim()) return;
-      const originalLabel = inquiryButton.innerHTML;
-      inquiryButton.disabled = true;
-      inquiryButton.textContent = 'Enviando...';
-      inquiryStatus.className = 'form-status is-visible is-pending';
-      inquiryStatus.textContent = 'Estamos enviando tu consulta.';
-      try {
-        const payload = Object.fromEntries(new FormData(inquiryForm).entries());
-        const response = await fetch(recipientEndpoint, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json','Accept':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        // Este servicio puede devolver HTTP 200 con success: "false":
-        // verificamos el resultado de la respuesta, no solo el código HTTP.
-        if (!response.ok || (data.success !== true && data.success !== 'true')) {
-          throw new Error('El servicio no confirmó la recepción de la consulta.');
-        }
-        inquiryStatus.className = 'form-status is-visible is-success';
-        inquiryStatus.textContent = '¡Gracias! Recibimos tu consulta y te responderemos a la brevedad.';
-        inquiryForm.reset();
-      } catch (error) {
-        inquiryStatus.className = 'form-status is-visible is-error';
-        inquiryStatus.textContent = 'No pudimos enviar la consulta. Por favor, intentá nuevamente o escribinos al correo publicado en esta página.';
-      } finally {
-        inquiryButton.disabled = false;
-        inquiryButton.innerHTML = originalLabel;
-      }
-    });
+    // El formulario se envía por POST estándar a FormSubmit.
+    // La activación inicial muestra la explicación del proveedor en lugar de un error genérico.
 
     const backToTop = document.querySelector('.back-to-top');
     const showBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 650);
